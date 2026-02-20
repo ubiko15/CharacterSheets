@@ -4,8 +4,7 @@ A web-based character sheet management system for tabletop RPG (Pen & Paper) gam
 
 ## Screenshot
 
-![Character Sheet Interface](screenshot.png)
-*Replace `screenshot.png` with your actual screenshot*
+![Character Sheet Interface](screenshotInterface.png)
 
 ## Features
 
@@ -19,16 +18,19 @@ A web-based character sheet management system for tabletop RPG (Pen & Paper) gam
 ## Tech Stack
 
 **Frontend:**
+
 - React + TypeScript
 - Vite (dev server & build tool)
 - CSS Modules
 
 **Backend:**
+
 - PHP 8.x (built-in server)
 - MySQL/MariaDB (via XAMPP)
 - RESTful API
 
 **Deployment:**
+
 - Cloudflare Tunnel (for internet access)
 - Local hosting
 
@@ -45,6 +47,7 @@ All components run locally on your machine. Cloudflare Tunnel provides secure in
 ### Data Structure
 
 Characters contain:
+
 - **General Stats:** Health, Stamina, Experience, Level
 - **Attributes:** Six main attributes (Kraft, Geschick, Reflexe, Verstand, Präsenz, Wahrnehmung)
 - **Skills:** Each attribute has 3-5 related skills
@@ -64,25 +67,27 @@ Characters contain:
 1. **Clone or download this repository**
 
 2. **Set up the database:**
-   - Start XAMPP (MySQL service)
-   - Create database named `pnp` in phpMyAdmin
-   - Import the database schema (if provided)
+    - Start XAMPP (MySQL service)
+    - Create database named `pnp` in phpMyAdmin
+    - Import the database schema (if provided)
 
 3. **Install frontend dependencies:**
-   ```bash
-   cd frontend
-   npm install
-   ```
+
+    ```bash
+    cd frontend
+    npm install
+    ```
 
 4. **Configure backend:**
-   - Edit `backend/config/database.php` if needed
-   - Default settings work with standard XAMPP installation
+    - Edit `backend/config/database.php` if needed
+    - Default settings work with standard XAMPP installation
 
 ### Usage
 
 #### Option 1: Local Only
 
 Run `start-local.bat` to start servers for local access only:
+
 - Frontend: http://localhost:5173
 - Backend: http://localhost:8000
 
@@ -122,12 +127,12 @@ CharacterSheets/
 
 ## API Endpoints
 
-| Method | Endpoint          | Description              |
-|--------|-------------------|--------------------------|
-| GET    | `/api?route=characters` | Get all characters |
-| GET    | `/api?route=character&id={id}` | Get character by ID |
-| POST   | `/api?route=newCharacter` | Create new character |
-| POST   | `/api?route=character` | Update character |
+| Method | Endpoint                       | Description          |
+| ------ | ------------------------------ | -------------------- |
+| GET    | `/api?route=characters`        | Get all characters   |
+| GET    | `/api?route=character&id={id}` | Get character by ID  |
+| POST   | `/api?route=newCharacter`      | Create new character |
+| POST   | `/api?route=character`         | Update character     |
 
 ## Configuration
 
@@ -160,20 +165,25 @@ CharacterSheets/
 ## Troubleshooting
 
 **"cloudflared is not installed"**
+
 - Download from Cloudflare and place in project folder or add to PATH
 
 **"PHP is not installed"**
+
 - Install XAMPP and add PHP to system PATH
 
 **"npm is not installed"**
+
 - Install Node.js from nodejs.org
 
 **"Database connection failed"**
+
 - Start XAMPP MySQL service
 - Verify database "pnp" exists
 - Check credentials in `backend/config/database.php`
 
 **Cloudflare URL doesn't work**
+
 - Wait 30-60 seconds for tunnel to activate
 - Restart servers with `stop.bat` then `start.bat`
 
